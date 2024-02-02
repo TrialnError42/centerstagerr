@@ -101,30 +101,19 @@ public class robotTeleOp extends OpMode {
     private void hangControl(){
         if(gamepad1.dpad_up){
             robot.lift.motorHang.setPower(-1);
-        }
+            robot.lift.servoHang.setPosition(robot.lift.SERVO_HANG_HANG_POS);        }
         else if(gamepad1.dpad_down){
             robot.lift.motorHang.setPower(1);
         }
-        else{
+        else {
             robot.lift.motorHang.setPower(0);
         }
-
-        if(gamepad2.dpad_right) {
-            robot.lift.servoHang.setPosition(0);
+        if (gamepad1.dpad_down && gamepad1.left_bumper) {
+            robot.lift.servoHang.setPosition(robot.lift.SERVO_HANG_INIT_POS);
         }
-        if(gamepad2.dpad_left) {
-            robot.lift.servoHang.setPosition(0.25);
 
-        }
-        if(gamepad2.dpad_up) {
-            robot.lift.servoHang.setPosition(0.75);
-
-        }
-        if(gamepad2.dpad_down) {
-            robot.lift.servoHang.setPosition(1);
-
-        }
     }
+
 
     private void intakeControl() {
         if (gamepad1.a) {

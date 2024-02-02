@@ -102,6 +102,9 @@ public class RobotHardware {
         public double INTAKE_HS_POWER = 0.7;
         public double INTAKE_LS_POWER = 0.5;
 
+        public double HANG_EXTEND_POS = -13235;
+        public double HANG_LOW_POS = 150;
+
         public double SERVO_INTAKE_INIT_POS = 0.87;
         public double SERVO_INTAKE_REG_POS = 0.29;
         public double SERVO_INTAKE_STACK_POS = 5;
@@ -115,8 +118,10 @@ public class RobotHardware {
         public double SERVO_BUCKET_INTAKE_POS = 0.47;
         public double SERVO_BUCKET_OUTAKE_POS = 0.12; // was 0.15
 
-        public double SERVO_HANG_INIT_POS = 0;
-        public double SERVO_HANG_HANG_POS = 0.5;
+        public double SERVO_HANG_INIT_POS = 0.25;
+        public double SERVO_HANG_HANG_POS = 0.43
+
+                ;
 
         public Lift(HardwareMap hardwareMap) {
             motorIntakeHighSpeed = hardwareMap.get(DcMotor.class, "intakeHS");

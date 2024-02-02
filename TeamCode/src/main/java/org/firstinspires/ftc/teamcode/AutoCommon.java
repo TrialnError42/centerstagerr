@@ -83,11 +83,11 @@ public class AutoCommon extends LinearOpMode {
 
         telemetry.addData("Coordinate", "(" + (int) cX + ", " + (int) cY + ")");
         telemetry.addData("Distance in Inch", (getDistance(width)));
-        if (cX <= 340 && cX >= 122 && cY >= 174 && cY <= 220) { //change 227 to the cX value when piece is in center
+        if (cX <= 340 && cX >= 122 ) { //&& cY >= 174 && cY <= 220
             telemetry.addData("Location: ", "Center");
             pos = 2;
 //                center();
-        } else if (cX <= 615 && cX >= 122 && cY >= 141 && cY <= 200) {//change 60 to the cX value when piece is in center
+        } else if (cX <= 615 && cX >= 122 ) { //&& cY >= 141 && cY <= 200
             telemetry.addData("Location", "Right");
 //                right();
             pos = 3;
