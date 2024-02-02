@@ -70,8 +70,6 @@ public class RobotHardware {
 
     public States currentState = States.INTAKE;
 
-    public Servo airplaneLauncher;
-    public int AIRPLANE_LAUNCHER_LAUNCH_POS = 250;
 
     // servo
 
@@ -93,6 +91,8 @@ public class RobotHardware {
         public Servo servoIntake;
         public Servo servoLauncher;
         public Servo servoBucket;
+
+        public Servo servoHang;
         public int LIFT_INTAKE_POS = 0;
         public int LIFT_HOVER_POS = 100;
         public int LIFT_LOW_POS = 2350;
@@ -114,6 +114,9 @@ public class RobotHardware {
         public double SERVO_BUCKET_INIT_POS = 0.47;
         public double SERVO_BUCKET_INTAKE_POS = 0.47;
         public double SERVO_BUCKET_OUTAKE_POS = 0.12; // was 0.15
+
+        public double SERVO_HANG_INIT_POS = 0;
+        public double SERVO_HANG_HANG_POS = 0.5;
 
         public Lift(HardwareMap hardwareMap) {
             motorIntakeHighSpeed = hardwareMap.get(DcMotor.class, "intakeHS");
@@ -148,6 +151,9 @@ public class RobotHardware {
 
             servoBucket = hardwareMap.get(Servo.class, "servoBucket");
             servoBucket.setPosition(SERVO_BUCKET_INIT_POS);
+
+            servoHang = hardwareMap.get(Servo.class, "servoHang");
+            servoHang.setPosition(SERVO_HANG_INIT_POS);
         }
     }
     public class DriveTrain {
